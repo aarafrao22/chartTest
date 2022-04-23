@@ -3,12 +3,14 @@ package com.aarafrao.charttest;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.components.AxisBase;
 import com.github.mikephil.charting.components.LimitLine;
 import com.github.mikephil.charting.components.XAxis;
+import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
@@ -21,7 +23,6 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     ArrayList<BarEntry> arrayList;
-    int count = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,14 +46,13 @@ public class MainActivity extends AppCompatActivity {
 
         barChart.getAxisLeft().setDrawGridLines(false);
         barChart.getXAxis().setDrawGridLines(false);
-//        barChart.getXAxis().setSpaceMax(5f);
+        barChart.getXAxis().setSpaceMax(5f);
         XAxis xAxis = barChart.getXAxis();
 
 
         barChart.setDescription(null);    // Hide the description
-        barChart.getAxisLeft().setDrawLabels(false);
-        barChart.getAxisRight().setDrawLabels(false);
-
+        barChart.getAxisLeft().setDrawLabels(true);
+        barChart.getAxisRight().setDrawLabels(true);
         barChart.getLegend().setEnabled(false);
 
         BarData barData = new BarData(barDataSet);
@@ -62,20 +62,36 @@ public class MainActivity extends AppCompatActivity {
         barData.setBarWidth(0.7f);
 
         final ArrayList<String> xVals = new ArrayList<>();
-        xVals.add("MON");
-        xVals.add("MON");
-        xVals.add("TUE");
-        xVals.add("WED");
-        xVals.add("THU");
-        xVals.add("FRI");
-        xVals.add("SAT");
-        xVals.add("SUN");
+        xVals.add("M");
+        xVals.add("M");
+        xVals.add("T");
+        xVals.add("W");
+        xVals.add("T");
+        xVals.add("F");
+        xVals.add("S");
+        xVals.add("S");
 
         xAxis.setCenterAxisLabels(false);
         xAxis.setDrawGridLines(false);
         xAxis.setAxisMaximum(8);
         xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
         xAxis.setValueFormatter(new IndexAxisValueFormatter(xVals));
+
+        Typeface tf = Typeface.createFromAsset(getAssets(), "impact.ttf");
+
+
+        LimitLine ll1 = new LimitLine(15f, "Upper Limit");
+        ll1.setLineWidth(0.4f);
+        ll1.setLineColor(Color.RED);
+        ll1.enableDashedLine(1.0f, 0.1f, 0f);
+        ll1.setLabelPosition(LimitLine.LimitLabelPosition.LEFT_BOTTOM);
+        ll1.setTextSize(10f);
+        ll1.setTypeface(tf);
+
+
+        YAxis leftAxis = barChart.getAxisLeft();
+        leftAxis.removeAllLimitLines(); // reset all limit lines to avoid overlapping lines
+        leftAxis.addLimitLine(ll1);
 
 
     }

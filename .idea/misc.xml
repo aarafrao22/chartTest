@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/chartTest/app/src/main/res/drawable/bg.xml" value="0.121" />
+        <entry key="..\:/chartTest/app/src/main/res/layout/activity_main.xml" value="0.1956521739130435" />
+        <entry key="..\:/chartTest/app/src/main/res/layout/marker.xml" value="0.5" />
         <entry key="..\:/chartTest2/app/src/main/res/layout/activity_main.xml" value="0.5" />
       </map>
     </option>

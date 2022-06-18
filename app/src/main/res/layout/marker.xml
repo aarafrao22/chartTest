@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="#F1F1F1"
+    android:padding="4dp">
+
+    <TextView
+        android:id="@+id/txtVisits"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1,105"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="visits"
+        android:layout_marginBottom="2dp"
+        android:layout_marginStart="2dp"
+        android:textSize="8dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/txtVisits"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txtVisits" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="19 May 2022"
+        android:textSize="5dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/txtVisits"
+        app:layout_constraintTop_toBottomOf="@+id/txtVisits" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total"
+        android:textSize="6dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/txtVisits"
+        app:layout_constraintStart_toStartOf="@+id/txtVisits" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
